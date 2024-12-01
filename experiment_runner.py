@@ -130,8 +130,4 @@ def create_indexes(index_commands):
 if __name__ == "__main__":
     DATASET_SIZE = "Medium"
 
-    indexes = {
-        "Default": [],
-    }
-
     run_experiments()
