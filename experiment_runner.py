@@ -9,7 +9,7 @@ from indexes import indexes
 import subprocess
 
 DB_PARAMS = {
-    "dbname": "stats_performance_test",
+    "dbname": "stats_2",
     "user": "postgres",
     "password": "password",
     "host": "localhost",
@@ -48,8 +48,10 @@ def clear_cache():
         conn.set_session(autocommit=True)
         with conn.cursor() as cur:
             cur.execute("SELECT pg_stat_reset();")
-            cur.execute("DISCARD ALL;")
-        conn.commit()
+
+    os.system(
+        f'psql -p {DB_PARAMS["port"]} -U {DB_PARAMS["user"]} {DB_PARAMS["dbname"]} -c "DISCARD ALL";'
+    )
 
     if os.name != "nt":
         os.system("sudo sync && sudo sh -c 'echo 3 > /proc/sys/vm/drop_caches'")
@@ -61,12 +63,18 @@ def execute_query(conn, query, clear_caches=True):
         clear_cache()
 
     with conn.cursor(cursor_factory=DictCursor) as cur:
-        start_time = time.time()
-        cur.execute(query)
-        conn.commit()
-        end_time = time.time()
-        execution_time = (end_time - start_time) * 1000
-        return execution_time
+        with psycopg2.connect(**DB_PARAMS) as conn:
+            with conn.cursor() as cur:
+                explain_query = f"EXPLAIN ANALYZE {query}"
+                cur.execute(explain_query)
+                result = cur.fetchall()
+
+                for line in result:
+                    line_text = line[0]
+                    if "Execution Time" in line_text:
+                        return float(line_text.split(":")[1].strip().split(" ")[0])
+
+    return -1
 
 
 def run_experiments():
