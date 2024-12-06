@@ -1,33 +1,27 @@
 indexes = {
-	  "Default": [],
-    
-		"BTree_Index": [
-        "CREATE INDEX idx_customers_email ON customers(email);",  
-        "CREATE INDEX idx_products_category ON products(category);",  
-        "CREATE INDEX idx_orders_customer_id ON orders(customer_id);",
-        "CREATE INDEX idx_order_items_order_id ON order_items(order_id);",
+    "no_indexes": [],
+    "single_column_indexes": [
+        "CREATE INDEX idx_customers_email ON customers (email);",
+        "CREATE INDEX idx_products_category ON products (category);",
+        "CREATE INDEX idx_customers_created_date ON customers (created_date);", 
+        "CREATE INDEX idx_orders_order_date ON orders (order_date);",
+        
     ],
-
-    "Hash_Index": [
-        "CREATE INDEX idx_customers_email_hash ON customers USING HASH (email);",  
-				"CREATE INDEX idx_orders_order_id_hash ON orders USING HASH (order_id);",  
+    "composite_indexes": [
+        "CREATE INDEX idx_orders_customer_order_date ON orders (customer_id, order_date);",
+        "CREATE INDEX idx_order_items_order_product ON order_items (order_id, product_id);",
+        "CREATE INDEX idx_products_category_price ON products (category, price);",
     ],
-
-    "Composite_Index": [
-        "CREATE INDEX idx_orders_customer_date ON orders(customer_id, order_date);",  
-        "CREATE INDEX idx_order_items_product_quantity ON order_items(product_id, quantity);",  
+    "partial_indexes": [
+        "CREATE INDEX idx_products_expensive ON products (price) WHERE price > 500;",
+        "CREATE INDEX idx_orders_recent ON orders (order_date) WHERE order_date > '2020-01-01';",
     ],
-
-    "Unique_Index": [
-        "CREATE UNIQUE INDEX idx_customers_unique_email ON customers(email);",  
-        "CREATE UNIQUE INDEX idx_order_items_unique ON order_items(order_id, product_id);",  
+    "expression_indexes": [
+        "CREATE INDEX idx_customers_lower_name ON customers (LOWER(customer_name));",
+        "CREATE INDEX idx_products_category_name ON products ((category || ' ' || product_name));",
     ],
-
-    "Full_Text_Index": [
-        "CREATE INDEX idx_products_description_gin ON products USING gin(to_tsvector('english', product_name));",  # Full-text index on product_name
-    ],
-
-    "Clustered_Index": [
-        "CLUSTER orders USING idx_orders_customer_id;",
+    "covering_indexes": [
+        "CREATE INDEX idx_orders_order_date_total_amount ON orders (order_date) INCLUDE (total_amount);",
+        "CREATE INDEX idx_order_items_product_id_quantity ON order_items (product_id) INCLUDE (quantity);",
     ],
 }
