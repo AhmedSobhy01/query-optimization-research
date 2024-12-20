@@ -1,0 +1,20 @@
+                Multiple Comparison of Means - Tukey HSD, FWER=0.05                 
+====================================================================================
+      group1               group2         meandiff p-adj    lower     upper   reject
+------------------------------------------------------------------------------------
+ composite_indexes      covering_indexes  460.4572    0.0  360.7519  560.1624   True
+ composite_indexes    expression_indexes  211.3004    0.0  111.5952  311.0057   True
+ composite_indexes            no_indexes  408.9759    0.0  309.2706  508.6811   True
+ composite_indexes       partial_indexes   -82.602 0.1664 -182.3073   17.1032  False
+ composite_indexes single_column_indexes  -74.2573 0.2688 -173.9625   25.4479  False
+  covering_indexes    expression_indexes -249.1567    0.0  -348.862 -149.4515   True
+  covering_indexes            no_indexes  -51.4813 0.6724 -151.1865   48.2239  False
+  covering_indexes       partial_indexes -543.0592    0.0 -642.7644  -443.354   True
+  covering_indexes single_column_indexes -534.7145    0.0 -634.4197 -435.0092   True
+expression_indexes            no_indexes  197.6754    0.0   97.9702  297.3807   True
+expression_indexes       partial_indexes -293.9025    0.0 -393.6077 -194.1972   True
+expression_indexes single_column_indexes -285.5577    0.0  -385.263 -185.8525   True
+        no_indexes       partial_indexes -491.5779    0.0 -591.2831 -391.8727   True
+        no_indexes single_column_indexes -483.2332    0.0 -582.9384 -383.5279   True
+   partial_indexes single_column_indexes    8.3447 0.9999  -91.3605    108.05  False
+------------------------------------------------------------------------------------

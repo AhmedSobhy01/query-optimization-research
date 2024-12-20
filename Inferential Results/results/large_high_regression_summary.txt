@@ -1,0 +1,35 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:       ExecutionTime_ms   R-squared:                       0.955
+Model:                            OLS   Adj. R-squared:                  0.954
+Method:                 Least Squares   F-statistic:                     2394.
+Date:                Tue, 17 Dec 2024   Prob (F-statistic):               0.00
+Time:                        18:24:31   Log-Likelihood:                -8318.9
+No. Observations:                1260   AIC:                         1.666e+04
+Df Residuals:                    1248   BIC:                         1.672e+04
+Df Model:                          11                                         
+Covariance Type:            nonrobust                                         
+=============================================================================================================
+                                                coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------------
+Intercept                                  2715.0615     17.483    155.301      0.000    2680.763    2749.360
+C(IndexStrategy)[T.covering_indexes]        148.6377     17.483      8.502      0.000     114.339     182.936
+C(IndexStrategy)[T.expression_indexes]      150.2290     17.483      8.593      0.000     115.931     184.528
+C(IndexStrategy)[T.no_indexes]               -5.6867     17.483     -0.325      0.745     -39.985      28.612
+C(IndexStrategy)[T.partial_indexes]          66.9302     17.483      3.828      0.000      32.632     101.229
+C(IndexStrategy)[T.single_column_indexes]  -165.5844     17.483     -9.471      0.000    -199.883    -131.286
+C(Query)[T.query_2]                       -2618.7035     18.883   -138.678      0.000   -2655.750   -2581.657
+C(Query)[T.query_3]                       -2569.0487     18.883   -136.048      0.000   -2606.095   -2532.002
+C(Query)[T.query_4]                       -1811.2658     18.883    -95.919      0.000   -1848.312   -1774.219
+C(Query)[T.query_5]                       -1521.4541     18.883    -80.571      0.000   -1558.501   -1484.408
+C(Query)[T.query_6]                       -1799.9373     18.883    -95.319      0.000   -1836.984   -1762.891
+C(Query)[T.query_7]                       -2008.0814     18.883   -106.341      0.000   -2045.128   -1971.035
+==============================================================================
+Omnibus:                       92.063   Durbin-Watson:                   0.636
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              428.212
+Skew:                          -0.115   Prob(JB):                     1.03e-93
+Kurtosis:                       5.847   Cond. No.                         8.50
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
