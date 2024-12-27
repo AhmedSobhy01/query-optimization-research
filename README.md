@@ -1,5 +1,7 @@
 # Query Optimization and Indexing Strategies Research 🏆
 
+<div align="center"> <img src="https://github.com/user-attachments/assets/47bc56d5-0085-419b-8978-1ecb60b4a33c" alt="Reward" width="400"/> </div>
+
 ## Overview 📊
 
 This repository contains the research and experimental results for a project that explores SQL query optimization and the impact of different indexing strategies and PostgreSQL configurations on query execution times. The project was presented at the **TCCD Research Day**, where we proudly secured **second place**. 🎉
