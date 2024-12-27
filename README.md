@@ -51,3 +51,52 @@ This project demonstrates the importance of query optimization in relational dat
 ## License 📜
 
 This repository is licensed under the MIT License. See LICENSE for more details.
+
+## Collaborators 🌟
+
+<table>
+<tr>
+  <td align = "center"> 
+	<a href = "https://github.com/AhmedAmrNabil">
+	  <img src = "https://github.com/AhmedAmrNabil.png" width = 100>
+	  <br />
+	  <sub> Ahmed Amr </sub>
+	</a>
+  </td>
+  <td align = "center"> 
+	<a href = "https://github.com/AhmedSobhy01">
+	  <img src = "https://github.com/AhmedSobhy01.png" width = 100>
+	  <br />
+	  <sub> Ahmed Sobhy </sub>
+	</a>
+  </td>
+  <td align = "center"> 
+	<a href = "https://github.com/Mag-D-Anas">
+	  <img src = "https://github.com/Mag-D-Anas.png" width = 100>
+	  <br />
+	  <sub> Anas Magdy </sub>
+	</a>
+  </td>
+  <td align = "center"> 
+	<a href = "https://github.com/habibayman">
+	  <img src = "https://github.com/habibayman.png" width = 100>
+	  <br />
+	  <sub> Habiba Ayman </sub>
+	</a>
+  </td>
+  <td align = "center"> 
+	<a href = "https://github.com/HelanaNady">
+	  <img src = "https://github.com/HelanaNady.png" width = 100>
+	  <br />
+	  <sub> Helana Nady </sub>
+	</a>
+  </td>
+  <td align = "center"> 
+	<a href = "https://github.com/OmarGamal10">
+	  <img src = "https://github.com/OmarGamal10.png" width = 100>
+	  <br />
+	  <sub> Omar Gamal </sub>
+	</a>
+  </td>
+</tr>
+</table>
